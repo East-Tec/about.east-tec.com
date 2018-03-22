@@ -1,0 +1,18 @@
+/**************************************
+ *	Top Level Elements
+ *************************************/
+
+ body {
+    font-family: "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }
+  
+  a, a:focus, a:hover {
+      color: #00a4f9;
+  }
+
+
+  .aet-post {
+      border-bottom: 1px solid #eee;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+  }

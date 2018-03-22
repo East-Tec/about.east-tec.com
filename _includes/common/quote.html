@@ -1,0 +1,14 @@
+{% capture thecontent %}
+<blockquote class="blockquote">
+    <div class="quote__content">{{ post.content }}</div>
+    <footer class="blockquote-footer">
+        <cite>{{ post.cite_name }}</cite> {{ post.cite_description }} {{ post.cite_location }}
+    </footer>
+</blockquote>
+
+<div>
+    {{ post.quote_extra }}
+</div>
+
+{% endcapture %}
+{% include common/post.html %}
