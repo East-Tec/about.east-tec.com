@@ -4,6 +4,8 @@ layout: default
 
 {{ content }}
 
-{% for post in site.posts %}
-    {% include common/post-switch.html %}
-{% endfor %}
+<div class="card-columns">
+    {% for post in site.posts %}
+        {% include common/post-switch.html %}
+    {% endfor %}
+</div>

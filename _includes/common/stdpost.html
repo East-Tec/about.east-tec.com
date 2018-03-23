@@ -1,28 +1,33 @@
 {% capture thecontent %} 
 
-    <div class="col">
+    {{ post.content }}
 
-        {{ post.content }}
+    <blockquote class="aet-quote">
 
-        <blockquote class="aet-quote">
-            <div class="aet-quote__content">{{ post.post_quote }}</div>
-            <footer class="blockquote-footer">
-                <cite>{{ post.post_cite }}</cite> {{ post.post_cite_location }}
-            </footer>
-        </blockquote>
+        {% assign size = post.post_quote.size %}
+        {% if size < 100 %}
+        {% assign size_class = "short" %}
+        {% elsif size < 500 %}
+        {% assign size_class = "medium" %}
+        {% else % }
+        {% assign size_class = "long" %}
+        {% endif %}
 
-        <div>
-            {{ post.quote_extra }}
-        </div>
-    </div>
+        <div class="aet-quote__content aet-size--{{ size_class }}">{{ post.post_quote }}</div>
+        <cite class="aet-quote__cite">
+            {{ post.post_cite }} <span class="aet-quote__cite-location">{{ post.post_cite_location }}</span>
+        </cite>
+    </blockquote>
 
     {% if post.post_image %}
-        <div class="col-md-2 order-lg-last">
-            <p>
-                <img src="{{ post.post_image }}" class="img-fluid {% if post.post_image_avatar %}aet-image--avatar{% endif %}" alt="" />
-            </p>
+        <div class="aet-post__image">
+            <img src="{{ post.post_image }}" class="img-fluid {% if post.post_image_avatar %}aet-image--avatar{% endif %}" alt="" />
         </div>
     {% endif %}
+
+    <div>
+        {{ post.post_extra }}
+    </div>
 
 {% endcapture %} 
 {% include common/post.html %}

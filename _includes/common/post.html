@@ -1,23 +1,23 @@
-<article class="aet-post">
-    <div class="row">
+<article class="aet-post card">
+    <div class="card-body">
+        <main class="aet-post-content">
+            {{ thecontent }}
+        </main>
 
-        {{ thecontent }}
-
-        <footer class="col-lg-2 order-lg-first aet-entry-footer">
-            <span class="d-lg-block">
+        <footer class="aet-post-footer">
+            <b>
                 {% if page.id %}
                     <time>{{ post.date | date_to_string }}</time>
                 {% else %}
                     <a href="{{ post.url }}">Permalink</a>
                 {% endif %}
-            </span>
+            </b>
 
-            <span class="d-lg-block">
+            <span>
                 {% for tag in post.tags %}
-                    <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">#{{ tag }}</a>
+                    <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}">#{{ tag }}</a>
                 {% endfor %}
             </span>
         </footer>
     </div>
-
 </article>
