@@ -16,3 +16,28 @@
       margin-bottom: 2rem;
       padding-bottom: 2rem;
   }
+
+
+.aet-quote__content::before {
+    content: open-quote;
+}
+
+.aet-quote__content::after {
+    content: close-quote;
+}
+
+.aet-image--avatar {
+    border-radius: 50%;
+}
+
+
+.aet-entry-footer {
+    color: #686868;
+    font-size: .8125rem;
+}
+
+.aet-entry-footer a {
+    color: #686868;
+}
+
+

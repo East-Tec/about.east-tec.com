@@ -1,0 +1,28 @@
+{% capture thecontent %} 
+
+    {% if post.post_image %}
+        <div class="col-md-2">
+            <p>
+                <img src="{{ post.post_image }}" class="img-fluid {% if post.post_image_avatar %}aet-image--avatar{% endif %}" alt="" />
+            </p>
+        </div>
+    {% endif %}
+
+    <div class="col">
+
+        {{ post.content }}
+
+        <blockquote class="blockquote">
+            <div class="aet-quote__content">{{ post.post_quote }}</div>
+            <footer class="blockquote-footer">
+                <cite>{{ post.post_cite }}</cite> {{ post.post_cite_location }}
+            </footer>
+        </blockquote>
+
+        <div>
+            {{ post.quote_extra }}
+        </div>
+    </div>
+
+{% endcapture %} 
+{% include common/post.html %}

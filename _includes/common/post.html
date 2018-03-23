@@ -1,8 +1,23 @@
 <article class="aet-post">
+    <div class="row">
 
-    {{ thecontent }}
+        {{ thecontent }}
 
-    {{ post.date | date_to_string }}
+        <footer class="col-lg-2 aet-entry-footer">
+            <span class="d-lg-block">
+                {% if page.id %}
+                    <time>{{ post.date | date_to_string }}</time>
+                {% else %}
+                    <a href="{{ post.url }}">Permalink</a>
+                {% endif %}
+            </span>
 
-    <a href="{{ post.url }}">Permalink</a>
+            <span class="d-lg-block">
+                {% for tag in post.tags %}
+                    <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">#{{ tag }}</a>
+                {% endfor %}
+            </span>
+        </footer>
+    </div>
+
 </article>
