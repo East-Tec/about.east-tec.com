@@ -1,18 +1,10 @@
 {% capture thecontent %} 
 
-    {% if post.post_image %}
-        <div class="col-md-2">
-            <p>
-                <img src="{{ post.post_image }}" class="img-fluid {% if post.post_image_avatar %}aet-image--avatar{% endif %}" alt="" />
-            </p>
-        </div>
-    {% endif %}
-
     <div class="col">
 
         {{ post.content }}
 
-        <blockquote class="blockquote">
+        <blockquote class="aet-quote">
             <div class="aet-quote__content">{{ post.post_quote }}</div>
             <footer class="blockquote-footer">
                 <cite>{{ post.post_cite }}</cite> {{ post.post_cite_location }}
@@ -23,6 +15,14 @@
             {{ post.quote_extra }}
         </div>
     </div>
+
+    {% if post.post_image %}
+        <div class="col-md-2 order-lg-last">
+            <p>
+                <img src="{{ post.post_image }}" class="img-fluid {% if post.post_image_avatar %}aet-image--avatar{% endif %}" alt="" />
+            </p>
+        </div>
+    {% endif %}
 
 {% endcapture %} 
 {% include common/post.html %}

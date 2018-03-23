@@ -17,6 +17,13 @@
       padding-bottom: 2rem;
   }
 
+  .aet-quote {
+    border-left: 4px solid #1a1a1a;
+    color: #686868;
+    font-size: 1.2rem;
+    font-style: italic;
+    padding-left: 2rem;
+  }
 
 .aet-quote__content::before {
     content: open-quote;
